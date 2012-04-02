@@ -11,7 +11,7 @@ for ((i=0;  i<$HOSTS_cnt*4-1; i+=4)); do
 	ISP=${HOSTS[i+1]}
 	HOST=${HOSTS[i+2]}
 	FILE=${HOSTS[i+3]}
-	echo $CITY\t$ISP\t$HOST
+	echo `date "+%Y-%m-%d %H:%M:%S"` $CITY $ISP $HOST
 	if [ ! -d $HOST ]; then
 		mkdir $HOST
 		touch $HOST/speed.log
