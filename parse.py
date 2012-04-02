@@ -4,7 +4,6 @@
 from elementtree import ElementTree
 import string
 config = []
-print "=== + LOAD"
 data = open('speedtest.xml')
 
 eliterator = ElementTree.iterparse(data,events=('start','end'))
@@ -24,7 +23,18 @@ for event,element in eliterator:
         isp = element.attrib.get('sponsor') 
         url = element.attrib.get('url')
         counter += 1
-        if country == 'DE':
+        if (country == 'RU') or \
+           (country == 'DE') or \
+           (country == 'BG') or \
+           (country == 'DE') or \
+           (country == 'PL') or \
+           (country == 'FR') or \
+           (country == 'NL') or \
+           (country == 'PL') or \
+           (country == 'IT') or \
+           (country == 'ES') or \
+           (country == 'GR') or \
+           (country == 'AU'):
             isp = string.replace(isp,' ','_')
             city = string.replace(city,' ','_')
             urls = url.split('/',3)
@@ -40,4 +50,5 @@ hosts = open("./hosts","w")
 
 for st in config:
     hosts.write("%s\t%s\t%s\t%s\n"%(st[0],st[1],st[2],st[3]))
+#    print st
 hosts.close()
