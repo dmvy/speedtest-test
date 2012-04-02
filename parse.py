@@ -3,7 +3,7 @@
 
 from elementtree import ElementTree
 import string
-config = [(None,None,None,None)]
+config = []
 print "=== + LOAD"
 data = open('speedtest.xml')
 
@@ -24,7 +24,7 @@ for event,element in eliterator:
         isp = element.attrib.get('sponsor') 
         url = element.attrib.get('url')
         counter += 1
-        if country == 'RU':
+        if country == 'DE':
             isp = string.replace(isp,' ','_')
             city = string.replace(city,' ','_')
             urls = url.split('/',3)
