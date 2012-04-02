@@ -6,7 +6,7 @@ IP=127.0.0.1
 
 HOSTS=( $(cat hosts))
 HOSTS_cnt=`cat hosts|wc -l`
-for ((i=0;  i<$HOSTS_cnt*5-1; i+=5)); do
+for ((i=0;  i<$HOSTS_cnt*4-1; i+=4)); do
 	HOST=${HOSTS[i+2]}
 	FILE=${HOSTS[i+3]}
 	echo $HOST $FILE

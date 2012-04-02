@@ -13,7 +13,7 @@ echo "<html>
 HOSTS=( $(cat hosts))
 echo ${HOSTS[@]}
 HOSTS_cnt=`cat hosts|wc -l`
-for ((i=0;i<$HOSTS_cnt*5-1; i+=5)); do 
+for ((i=0;i<$HOSTS_cnt*4-1; i+=4)); do 
 	CITY=${HOSTS[i+0]}
 	ISP=${HOSTS[i+1]}
 	HOST=${HOSTS[i+2]} 
